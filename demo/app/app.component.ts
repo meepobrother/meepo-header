@@ -3,6 +3,7 @@ import {
 } from '@angular/core';
 import { EventService } from 'meepo-event';
 import { HEADER_SHOWN, HEADER_HIDDEN, HEADER_TABS_HIDDEN, HEADER_TABS_SHOWN } from '../../src/app/app';
+import { FOOTER_SHOWN, FOOTER_HIDDEN } from 'meepo-footer';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,5 +34,12 @@ export class AppComponent {
 
   hideHeaderTabs() {
     this.event.publish(HEADER_TABS_HIDDEN, '');
+  }
+
+  showFooter() {
+    this.event.publish(FOOTER_SHOWN, '');
+  }
+  hideFooter() {
+    this.event.publish(FOOTER_HIDDEN, '');
   }
 }
