@@ -3056,9 +3056,9 @@ meepo-event@>=1.1.8:
     rxjs "^5.5.5"
     zone.js "0.8.4"
 
-meepo-footer@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/meepo-footer/-/meepo-footer-1.1.3.tgz#2c2401b45b30aaaf8f362a028bcb4f08ce1bbc0c"
+meepo-footer@>=1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/meepo-footer/-/meepo-footer-1.1.4.tgz#9fb272ef9be2c1bd6d0dd2a34f9f0bd351f83026"
   dependencies:
     "@angular/common" ">=5.1.2"
     "@angular/core" ">=5.1.2"
@@ -3085,7 +3085,7 @@ meepo-footer@^1.1.3:
     rxjs "^5.5.5"
     zone.js ">=0.8.4"
 
-meepo-icons@>=1.0.7, meepo-icons@^1.0.7:
+meepo-icons@>=1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/meepo-icons/-/meepo-icons-1.0.7.tgz#ddb977b05d2ddf35754e38c3c0e369b2971978aa"
   dependencies:
