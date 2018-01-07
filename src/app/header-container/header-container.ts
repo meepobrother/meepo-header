@@ -17,6 +17,8 @@ export class HeaderContainerComponent implements AfterContentInit {
     @ViewChild('right') right: ElementRef;
 
     @HostBinding('class.animated') _animated: boolean = true;
+
+    show: boolean = true;
     width: any;
     constructor(
         public event: EventService,
@@ -24,12 +26,19 @@ export class HeaderContainerComponent implements AfterContentInit {
         public ele: ElementRef
     ) {
         this.event.subscribe(HEADER_SHOWN, () => {
-            this.render.removeClass(this.ele.nativeElement, 'headerSlideOutUp');
-            this.render.addClass(this.ele.nativeElement, 'headerSlideInDown');
+            if (!this.show) {
+                this.render.removeClass(this.ele.nativeElement, 'headerSlideOutUp');
+                this.render.addClass(this.ele.nativeElement, 'headerSlideInDown');
+                this.show = true;
+            }
         });
         this.event.subscribe(HEADER_HIDDEN, () => {
-            this.render.removeClass(this.ele.nativeElement, 'headerSlideInDown');            
-            this.render.addClass(this.ele.nativeElement, 'headerSlideOutUp');
+            if (this.show) {
+                this.render.removeClass(this.ele.nativeElement, 'headerSlideInDown');
+                this.render.addClass(this.ele.nativeElement, 'headerSlideOutUp');
+                this.show = false;
+            }
+
         });
     }
     ngAfterContentInit() {
