@@ -1,0 +1,8 @@
+<div class="tabs-container">
+    <div class="tabs-item" *ngFor="let item of items">
+        <ng-container *ngTemplateOutlet="ref;context: {$implicit: item}"></ng-container>
+    </div>
+</div>
+<div class="tabs-right">
+    <ng-content></ng-content>
+</div>
